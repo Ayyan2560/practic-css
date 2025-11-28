@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USAMA HAND BAGS - Timeless Elegance, Modern Craft</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* --- Basic Styles --- */
+        :root {
+            --primary-color: #333333;
+            --secondary-color: #f4f4f4;
+            --accent-color: #c9a961; /* Gold color */
+            --text-color: #555555;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Open Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 2rem;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.5rem; text-align: center; margin-bottom: 3rem; }
+        h3 { font-size: 1.5rem; }
+
+        p { margin-bottom: 1rem; }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        /* --- Navigation --- */
+        #main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            position: sticky;
+            top: 0;
+            background: #fff;
+            z-index: 1000;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        #main-nav .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        #main-nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        #main-nav ul li a {
+            padding: 0.75rem 1rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        #main-nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=2070') no-repeat center center/cover;
+            height: 90vh;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            color: #fff;
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: #f4f4f4;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: #fff;
+            padding: 0.8rem 2rem;
+            margin-top: 1rem;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #b18f52;
+        }
+
+        /* --- Sections --- */
+        section {
+            padding: 4rem 0;
+        }
+
+        #collections .items {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .item {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .item .content {
+            padding: 1.5rem;
+        }
+        
+        .item h3 {
+            font-size: 1.2rem;
+        }
+
+        /* --- About Section --- */
+        #about {
+            background: var(--secondary-color);
+        }
+        
+        #about .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        #about img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        /* --- Order Section --- */
+        #order .order-methods {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .order-methods .method {
+            background: #fff;
+            padding: 2rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+        }
+        
+        .order-methods .method h3 {
+            color: var(--accent-color);
+        }
+
+        /* --- Contact Section --- */
+        #contact .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        #contact .contact-form .form-group {
+            margin-bottom: 1rem;
+        }
+
+        #contact .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        #contact .contact-form input,
+        #contact .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #contact .contact-info {
+            background: var(--secondary-color);
+            padding: 2rem;
+            border-radius: 5px;
+        }
+
+        #contact .contact-info h3 {
+            margin-bottom: 1rem;
+        }
+
+        #contact .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        footer .social a {
+            color: #fff;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        footer .social a:hover {
+            color: var(--accent-color);
+        }
+
+        /* --- Mobile Responsive --- */
+        @media(max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .hero { height: 60vh; }
+            .hero h1 { font-size: 3rem; }
+            #main-nav { flex-direction: column; }
+            #main-nav ul { padding: 1rem 0; }
+            #collections .items,
+            #about .about-content,
+            #order .order-methods,
+            #contact .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="container">
+            <a href="#home" class="logo">USAMA BAGS</a>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#order">How to Order</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>USAMA BAGS</h1>
+            <p>Timeless Elegance, Modern Craft</p>
+            <a href="#collections" class="btn">View Our Collections</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Collections Section -->
+        <section id="collections" class="container">
+            <h2>Our Featured Collections</h2>
+            <div class="items">
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1934" alt="Executive Collection">
+                    <div class="content">
+                        <h3>The Executive Collection</h3>
+                        <p>Stylish and practical bags designed for the modern professional.</p>
+                        <a href="#contact" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=1934" alt="Evening Clutch">
+                    <div class="content">
+                        <h3>The Evening Clutch</h3>
+                        <p>Exquisite clutches to complement your party and formal attire.</p>
+                        <a href="#contact" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=2070" alt="Everyday Tote">
+                    <div class="content">
+                        <h3>The Everyday Tote</h3>
+                        <p>Spacious and durable tote bags for your daily adventures.</p>
+                        <a href="#contact" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="container">
+            <h2>Our Story</h2>
+            <div class="about-content">
+                <img src="https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=2070" alt="Artisan crafting a bag">
+                <div>
+                    <p>Aura Bags began with a simple idea: to create handbags that are not just beautiful, but are also a reliable companion for every moment of a woman's life. Our founder, [Your Name Here], has had a passion for design and quality craftsmanship since childhood.</p>
+                    <p>Today, Aura is the result of that passion. We work closely with our skilled artisans in [Your City, e.g., Jaipur] to meticulously craft each bag. Our goal is for you to see quality, style, and a unique story in every Aura Bag you own.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Order Section -->
+        <section id="order" class="container">
+            <h2>How to Order</h2>
+            <div class="order-methods">
+                <div class="method">
+                    <h3>Contact on WhatsApp</h3>
+                    <p>The fastest way to get in touch. Message us directly on WhatsApp to place your order.</p>
+                    <a href="https://wa.me/919876543210" class="btn">WhatsApp Us</a> <!-- IMPORTANT: Replace 919876543210 with your number -->
+                </div>
+                <div class="method">
+                    <h3>Give Us a Call</h3>
+                    <p>Call us from Monday to Saturday, between 10 AM and 7 PM to get more information.</p>
+                    <a href="tel:+919876543210" class="btn">Call Now</a> <!-- IMPORTANT: Replace 919876543210 with your number -->
+                </div>
+                <div class="method">
+                    <h3>Visit Our Showroom</h3>
+                    <p>Come see our collection up close and personal at our physical store.</p>
+                    <p><strong>Address:</strong> 123, Fashion Street, Mumbai, India</p> <!-- IMPORTANT: Replace with your address -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-wrapper">
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Direct Contact</h3>
+                    <p><strong>WhatsApp:</strong> <a href="https://wa.me/919876543210">+91 98765 43210</a></p> <!-- IMPORTANT: Replace with your number -->
+                    <p><strong>Phone:</strong> <a href="tel:+919876543210">+91 98765 43210</a></p> <!-- IMPORTANT: Replace with your number -->
+                    <p><strong>Email:</strong> <a href="mailto:info@aurabags.com">info@aurabags.com</a></p> <!-- IMPORTANT: Replace with your email -->
+                    <p><strong>Address:</strong> 123, Fashion Street, Mumbai, India</p> <!-- IMPORTANT: Replace with your address -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social">
+                <!-- Add your social media links here -->
+                <a href="#">FB</a>
+                <a href="#">IG</a>
+                <a href="#">PN</a>
+            </div>
+            <p>&copy; 2024 Aura Bags. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
